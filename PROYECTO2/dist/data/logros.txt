@@ -1,0 +1,8 @@
+Primera Compra|Realiza tu primera compra en la tienda.|false|
+Coleccionista Novato|Agrega 10 cartas a tu album.|false|
+Coleccionista Experto|Completa una fila del album.|false|
+Taquillero|Compra tickets para 3 torneos distintos.|false|
+Alta Rareza|Obtiene una carta de rareza Legendaria.|false|
+Gamer Dedicado|Acumula 1,000 XP.|false|
+Leyenda Viviente|Alcanza el nivel 5.|false|
+Gran Gastador|Gasta mas de Q2,000 en la tienda.|false|

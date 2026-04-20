@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GameZonePro" default="jar" basedir=".">
+    <description>Proyecto GameZone Pro en Java Swing.</description>
+    <property file="nbproject/project.properties"/>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${build.classes.dir}"/>
+        <javac srcdir="${src.dir}"
+               destdir="${build.classes.dir}"
+               encoding="${source.encoding}"
+               source="${javac.source}"
+               target="${javac.target}"
+               includeantruntime="false"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${dist.jar}" basedir="${build.classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="${main.class}" fork="true" classpath="${run.classpath}"/>
+    </target>
+</project>

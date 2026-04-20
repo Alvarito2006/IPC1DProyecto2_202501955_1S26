@@ -1,0 +1,4 @@
+T001|Copa Heroica|The Last Hero|2026-05-03|18:00|75.0|10
+T002|Mystic Masters|Mystic Arena|2026-05-10|15:30|85.0|8
+T003|Liga Pixel|Pixel Strikers|2026-05-18|11:00|50.0|12
+T004|Desafio Nexus|Tactical Nexus|2026-05-24|16:45|95.0|6

@@ -1,0 +1,3 @@
+6|6
+0|0|01|Rowlet|Planta|Poco Comun|100|50|150|https://i.pinimg.com/originals/c5/b1/5c/c5b15ca9cfc1c585773c12aa100e0b3c.png
+0|1|CARTA-001|Draco Solar|Fuego|Legendaria|320|260|280|sin_imagen

@@ -1,0 +1,12 @@
+CARTA-001|Draco Solar|Fuego|Legendaria|320|260|280|sin_imagen
+CARTA-002|Tortugo Marino|Agua|Rara|180|240|310|sin_imagen
+CARTA-003|Guardian Raiz|Planta|Poco Comun|170|220|330|sin_imagen
+CARTA-004|Rayo Lynx|Electrico|Rara|260|140|190|sin_imagen
+CARTA-005|Vision Arcana|Psiquico|Ultra Rara|290|200|210|sin_imagen
+CARTA-006|Lobo Nocturno|Oscuro|Comun|150|150|180|sin_imagen
+CARTA-007|Centinela Acero|Acero|Ultra Rara|240|320|260|sin_imagen
+CARTA-008|Leon Boreal|Normal|Comun|140|120|160|sin_imagen
+CARTA-009|Fenix Carmesi|Fuego|Ultra Rara|310|210|220|sin_imagen
+CARTA-010|Kraken Azul|Agua|Legendaria|340|280|350|sin_imagen
+CARTA-011|Treant Titan|Planta|Rara|210|260|340|sin_imagen
+CARTA-012|Oraculo Prisma|Psiquico|Legendaria|330|230|250|sin_imagen

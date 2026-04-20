@@ -1,0 +1,8 @@
+G001|The Last Hero|Accion|499.99|PC|10|Campana futurista con combates tacticos.
+G002|Mystic Arena|RPG|399.50|PlayStation|8|Explora reinos magicos y mejora heroes.
+G003|Galaxy Racers|Aventura|289.99|Xbox|12|Carreras espaciales con pistas extremas.
+G004|Pixel Strikers|Deportes|179.00|Nintendo Switch|15|Futbol arcade con estilo retro.
+G005|Tactical Nexus|Estrategia|459.75|PC|6|Gestiona escuadrones y defiende colonias.
+G006|Shadow Dojo|Accion|349.25|PlayStation|9|Combate sigiloso con arte ninja.
+G007|Dungeon Pulse|Terror|269.40|Xbox|7|Sobrevive a un laberinto lleno de trampas.
+G008|Sky Odyssey|Aventura|299.99|PC|14|Viaja entre islas flotantes y resuelve misterios.
