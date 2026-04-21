@@ -27,7 +27,8 @@ Para utilizar la aplicación, se recomienda lo siguiente:
 2. Ejecutar la clase principal del sistema.
 3. Esperar a que aparezca la ventana principal de **GameZone Pro**.
 
-![Ingreso al sistema](image.png)
+<img width="1911" height="972" alt="image" src="https://github.com/user-attachments/assets/d570f139-b732-493f-a466-2b42aa64ed00" />
+
 
 ---
 
@@ -49,8 +50,9 @@ Al iniciar el sistema, se muestra el menú principal de la aplicación. Desde es
 3. Hacer clic en el módulo que se desea utilizar.
 4. Para volver al menú principal, usar el botón de regreso disponible en cada módulo.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del menú principal con todas las opciones visibles]`
+
+<img width="1917" height="986" alt="image" src="https://github.com/user-attachments/assets/fdec9bc4-dc05-45f6-98fc-ab7fb07f34b7" />
+
 
 ---
 
@@ -65,8 +67,9 @@ En esta sección el usuario puede visualizar los juegos disponibles en la tienda
 2. Observar la lista o tarjetas de juegos disponibles.
 3. Revisar la información mostrada de cada juego.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del catálogo de videojuegos]`
+
+<img width="1919" height="971" alt="image" src="https://github.com/user-attachments/assets/3a0aeab4-f251-45da-9a44-20b68ab734d6" />
+
 
 ### 4.2 Buscar y filtrar juegos
 La tienda permite buscar juegos por nombre o código y aplicar filtros por categoría.
@@ -77,8 +80,9 @@ La tienda permite buscar juegos por nombre o código y aplicar filtros por categ
 3. Usar los filtros disponibles, como género o plataforma.
 4. Revisar cómo se actualizan los resultados mostrados.
 
-**Espacio para captura:**  
-`[Insertar aquí captura usando el buscador o filtros]`
+
+<img width="1906" height="883" alt="image" src="https://github.com/user-attachments/assets/4ff68008-81f4-43a2-9548-52497709ae03" />
+
 
 ### 4.3 Ver detalles de un juego
 El sistema permite seleccionar un juego para revisar sus datos específicos.
@@ -88,8 +92,6 @@ El sistema permite seleccionar un juego para revisar sus datos específicos.
 2. Presionar el botón correspondiente para ver detalles.
 3. Revisar la información completa del producto.
 
-**Espacio para captura:**  
-`[Insertar aquí captura de la ventana o panel de detalles del juego]`
 
 ### 4.4 Agregar productos al carrito
 Una vez seleccionado un juego, se puede agregar al carrito de compra.
@@ -99,8 +101,9 @@ Una vez seleccionado un juego, se puede agregar al carrito de compra.
 2. Presionar el botón **Agregar al carrito**.
 3. Verificar que el juego aparezca en la sección del carrito.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del carrito con productos agregados]`
+
+<img width="1894" height="974" alt="image" src="https://github.com/user-attachments/assets/663d7181-061c-427e-8ca5-72875d3c4a5b" />
+
 
 ### 4.5 Modificar o eliminar productos del carrito
 El usuario puede cambiar cantidades o eliminar productos antes de confirmar la compra.
@@ -111,8 +114,9 @@ El usuario puede cambiar cantidades o eliminar productos antes de confirmar la c
 3. Seleccionar un producto y presionar el botón de eliminar.
 4. Confirmar que el carrito se actualice correctamente.
 
-**Espacio para captura:**  
-`[Insertar aquí captura modificando cantidades o eliminando un item]`
+
+<img width="1918" height="975" alt="image" src="https://github.com/user-attachments/assets/5814a447-bf6d-401f-b3ec-efa72f1b19a7" />
+
 
 ### 4.6 Confirmar compra
 Cuando el usuario finaliza la selección de productos, puede procesar la compra.
@@ -125,8 +129,9 @@ Cuando el usuario finaliza la selección de productos, puede procesar la compra.
 
 > Nota: Si un producto no tiene stock suficiente, el sistema mostrará un mensaje de advertencia.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del mensaje de compra exitosa o advertencia de stock]`
+
+<img width="1916" height="981" alt="image" src="https://github.com/user-attachments/assets/71a85a3f-2855-4874-b02a-97a5194ca697" />
+
 
 ### 4.7 Ver historial de compras
 El sistema almacena las compras realizadas y las muestra dentro del módulo.
@@ -136,8 +141,9 @@ El sistema almacena las compras realizadas y las muestra dentro del módulo.
 2. Ubicar la sección **Historial de compras**.
 3. Revisar las compras registradas.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del historial de compras]`
+
+<img width="721" height="238" alt="image" src="https://github.com/user-attachments/assets/61af9179-9057-4ff6-a818-0e10ba9cb9f8" />
+
 
 ---
 
@@ -152,8 +158,9 @@ El álbum muestra una cuadrícula con espacios vacíos o cartas ya agregadas.
 2. Observar la cuadrícula del álbum.
 3. Identificar celdas vacías y cartas existentes.
 
-**Espacio para captura:**  
-`[Insertar aquí captura general del álbum de cartas]`
+
+<img width="1915" height="974" alt="image" src="https://github.com/user-attachments/assets/e86adcd0-d016-4ec4-8ec1-eeff89897250" />
+
 
 ### 5.2 Agregar una carta desde el catálogo
 El usuario puede añadir cartas disponibles al álbum.
@@ -164,8 +171,10 @@ El usuario puede añadir cartas disponibles al álbum.
 3. Presionar el botón **Agregar Carta**.
 4. Confirmar que la carta aparezca en la primera posición vacía disponible.
 
-**Espacio para captura:**  
-`[Insertar aquí captura agregando una carta al álbum]`
+
+<img width="1899" height="967" alt="image" src="https://github.com/user-attachments/assets/c66801ee-a3d7-4ed5-95ca-bdd7d5e77f09" />
+
+
 
 ### 5.3 Crear una carta manualmente
 El sistema permite registrar cartas nuevas con sus atributos.
@@ -176,8 +185,7 @@ El sistema permite registrar cartas nuevas con sus atributos.
 3. Confirmar la creación de la carta.
 4. Verificar que la carta se agregue al álbum.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del formulario para crear una carta]`
+<img width="1918" height="990" alt="image" src="https://github.com/user-attachments/assets/5965c229-aa32-4c6f-8636-29f5fcc7c11e" />
 
 ### 5.4 Buscar cartas dentro del álbum
 Se puede realizar una búsqueda para resaltar cartas específicas.
@@ -187,8 +195,7 @@ Se puede realizar una búsqueda para resaltar cartas específicas.
 2. Escribir el nombre, tipo o rareza de la carta.
 3. Revisar el resaltado de las coincidencias encontradas.
 
-**Espacio para captura:**  
-`[Insertar aquí captura mostrando cartas resaltadas por búsqueda]`
+
 
 ### 5.5 Ver detalles de una carta
 Al seleccionar una carta, el sistema muestra sus atributos.
@@ -198,8 +205,8 @@ Al seleccionar una carta, el sistema muestra sus atributos.
 2. Revisar el panel lateral o sección de detalles.
 3. Verificar información como nombre, tipo, ataque, defensa o rareza.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del panel de detalles de una carta]`
+
+<img width="288" height="683" alt="image" src="https://github.com/user-attachments/assets/a16928c5-f20b-47b3-8bd5-c637bb399702" />
 
 ### 5.6 Intercambiar cartas
 El sistema permite reorganizar el álbum intercambiando posiciones.
@@ -210,8 +217,8 @@ El sistema permite reorganizar el álbum intercambiando posiciones.
 3. Presionar el botón **Intercambiar Seleccionadas**.
 4. Confirmar que las posiciones cambien correctamente.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del intercambio de cartas]`
+<img width="1915" height="982" alt="image" src="https://github.com/user-attachments/assets/5675f9d7-1fe2-434c-974b-5e3e21158c81" />
+
 
 ---
 
@@ -226,8 +233,8 @@ El sistema muestra los torneos cargados en la aplicación.
 2. Revisar la tabla o lista de torneos disponibles.
 3. Seleccionar un torneo para ver su información.
 
-**Espacio para captura:**  
-`[Insertar aquí captura de la lista de torneos]`
+<img width="1915" height="967" alt="image" src="https://github.com/user-attachments/assets/7f048d53-d32f-4755-9a9e-32c165f4df18" />
+
 
 ### 6.2 Inscribirse a la cola
 El usuario puede registrarse en la cola de espera para comprar un ticket.
@@ -238,8 +245,6 @@ El usuario puede registrarse en la cola de espera para comprar un ticket.
 3. Presionar el botón **Inscribirse a la Cola**.
 4. Confirmar que el nombre aparezca en la cola del torneo.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del registro de un usuario en la cola]`
 
 ### 6.3 Iniciar taquillas concurrentes
 El proceso de venta se realiza mediante hilos que atienden la cola.
@@ -250,8 +255,6 @@ El proceso de venta se realiza mediante hilos que atienden la cola.
 3. Observar el estado de cada taquilla.
 4. Revisar la cola restante y el log de ventas en tiempo real.
 
-**Espacio para captura:**  
-`[Insertar aquí captura de las taquillas procesando tickets]`
 
 ### 6.4 Ver tickets vendidos
 El sistema muestra el historial o registro de tickets procesados.
@@ -261,8 +264,6 @@ El sistema muestra el historial o registro de tickets procesados.
 2. Revisar los tickets ya vendidos por las taquillas.
 3. Confirmar cuándo termina el proceso por falta de tickets o por cola vacía.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del historial de tickets vendidos]`
 
 ---
 
@@ -277,8 +278,8 @@ Aquí se muestra el progreso general del usuario.
 2. Revisar la cantidad de XP acumulada.
 3. Observar el nivel actual, rango y barra de progreso.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del panel de XP, nivel y barra de progreso]`
+<img width="1916" height="961" alt="image" src="https://github.com/user-attachments/assets/235264fd-e4e6-473b-9650-782e9c91e5f7" />
+
 
 ### 7.2 Consultar logros
 El sistema muestra los logros desbloqueados y los pendientes.
@@ -288,8 +289,8 @@ El sistema muestra los logros desbloqueados y los pendientes.
 2. Revisar cuáles logros están bloqueados y cuáles ya fueron desbloqueados.
 3. Verificar si el sistema muestra algún aviso o notificación al completar un logro.
 
-**Espacio para captura:**  
-`[Insertar aquí captura de la sección de logros]`
+<img width="808" height="902" alt="image" src="https://github.com/user-attachments/assets/5f34b3ea-3d76-4b18-b661-c49dff3245a0" />
+
 
 ### 7.3 Consultar leaderboard
 El tablero de líderes muestra el ranking de usuarios.
@@ -299,8 +300,8 @@ El tablero de líderes muestra el ranking de usuarios.
 2. Revisar las posiciones de los usuarios con mayor experiencia.
 3. Identificar la posición del usuario actual dentro del sistema.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del leaderboard]`
+<img width="783" height="843" alt="image" src="https://github.com/user-attachments/assets/5efd2b86-f53f-4460-8316-30830e4086dc" />
+
 
 ---
 
@@ -320,11 +321,9 @@ La aplicación permite generar reportes en formato HTML con información importa
 4. Esperar a que el sistema genere y abra el archivo HTML.
 5. Revisar el contenido del reporte en el navegador.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del módulo de reportes]`
+<img width="1912" height="986" alt="image" src="https://github.com/user-attachments/assets/35e0fd96-14fd-4ed0-bb65-986166ce470d" />
 
-**Espacio para captura adicional:**  
-`[Insertar aquí captura de un reporte HTML abierto en el navegador]`
+<img width="1906" height="903" alt="image" src="https://github.com/user-attachments/assets/46f3cee0-8b16-4aa6-a491-43e70dfe2599" />
 
 ---
 
@@ -344,8 +343,8 @@ Esta sección muestra la información académica y general del desarrollador del
 1. Ingresar al módulo **Datos del Estudiante**.
 2. Revisar la información personal y académica desplegada en pantalla.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del panel de datos del estudiante]`
+<img width="1918" height="989" alt="image" src="https://github.com/user-attachments/assets/4e93c873-0cae-4217-8b84-953dfa78d547" />
+
 
 ---
 
@@ -359,8 +358,6 @@ La aplicación cuenta con una opción para finalizar su ejecución de forma orde
 
 > Durante el cierre, el sistema puede guardar información importante en archivos, como historial de compras, álbum o tickets vendidos.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del botón salir o del cierre de la aplicación]`
 
 ---
 
