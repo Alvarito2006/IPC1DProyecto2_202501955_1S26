@@ -34,10 +34,10 @@ public class AppContext {
 
     public AppContext() {
         EstudianteInfo porDefecto = new EstudianteInfo(
-                "Alvaro Moisés Girón Morales",
+                "Alvaro Moisés Girón Morlaes",
                 "202501955",
                 "3055401650208",
-                "202501955@ingenieria.usac.edu.gt",
+                "3055401650208@ingenieria.usac.edu.gt",
                 "D",
                 "Primer semestre 2026",
                 "GameZone Pro integra tienda, album coleccionable, torneos concurrentes, recompensas y reportes HTML.");
