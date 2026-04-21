@@ -472,8 +472,4 @@ classDiagram
 - `ReporteService` toma información del contexto general para generar archivos HTML.
 - `MainFrame` reúne todos los paneles y permite la navegación entre módulos.
 
----
 
-## 9. Observación final
-Estos diagramas de clases pueden copiarse directamente al manual técnico o exportarse a PDF.  
-Si el visor de Markdown que uses soporta **Mermaid**, los diagramas se renderizarán automáticamente. Si no, igual te sirven como descripción textual y base para pasarlos a una herramienta UML.
