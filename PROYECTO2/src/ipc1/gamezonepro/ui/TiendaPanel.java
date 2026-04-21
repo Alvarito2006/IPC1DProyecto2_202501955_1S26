@@ -57,8 +57,10 @@ public class TiendaPanel extends JPanel implements RefreshablePanel {
         filtros.add(AppTheme.subtitulo("Genero"));
         filtros.add(AppTheme.subtitulo("Plataforma"));
         filtros.add(AppTheme.subtitulo("Buscar por nombre o codigo"));
-        generoCombo = new JComboBox<String>(new String[]{"Todos", "Accion", "RPG", "Estrategia", "Deportes", "Terror", "Aventura"});
-        plataformaCombo = new JComboBox<String>(new String[]{"Todas", "PC", "PlayStation", "Xbox", "Nintendo Switch"});
+        generoCombo = new JComboBox<String>();
+        plataformaCombo = new JComboBox<String>();
+        cargarOpcionesGenero();
+        cargarOpcionesPlataforma();
         busquedaField = new JTextField();
         filtros.add(generoCombo);
         filtros.add(plataformaCombo);
@@ -82,7 +84,7 @@ public class TiendaPanel extends JPanel implements RefreshablePanel {
         detalleArea.setOpaque(false);
         detalleArea.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14));
         agregarButton = new JButton("Agregar al carrito");
-        AppTheme.estilizarBotonPrimario(agregarButton);
+        AppTheme.estilizarBotonExito(agregarButton);
         agregarButton.setEnabled(false);
         agregarButton.addActionListener(e -> {
             if (seleccionado != null) {
@@ -107,8 +109,8 @@ public class TiendaPanel extends JPanel implements RefreshablePanel {
         totalCarritoLabel.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
         JButton eliminarButton = new JButton("Eliminar item");
         JButton confirmarButton = new JButton("Confirmar compra");
-        AppTheme.estilizarBotonSecundario(eliminarButton);
-        AppTheme.estilizarBotonPrimario(confirmarButton);
+        AppTheme.estilizarBotonPeligro(eliminarButton);
+        AppTheme.estilizarBotonExito(confirmarButton);
         eliminarButton.addActionListener(e -> {
             int fila = carritoTable.getSelectedRow();
             if (fila >= 0) {
@@ -154,6 +156,24 @@ public class TiendaPanel extends JPanel implements RefreshablePanel {
 
         configurarFiltros();
         refreshData();
+    }
+
+    private void cargarOpcionesGenero() {
+        generoCombo.addItem("Todos");
+        generoCombo.addItem("Accion");
+        generoCombo.addItem("RPG");
+        generoCombo.addItem("Estrategia");
+        generoCombo.addItem("Deportes");
+        generoCombo.addItem("Terror");
+        generoCombo.addItem("Aventura");
+    }
+
+    private void cargarOpcionesPlataforma() {
+        plataformaCombo.addItem("Todas");
+        plataformaCombo.addItem("PC");
+        plataformaCombo.addItem("PlayStation");
+        plataformaCombo.addItem("Xbox");
+        plataformaCombo.addItem("Nintendo Switch");
     }
 
     private void configurarFiltros() {
@@ -214,7 +234,7 @@ public class TiendaPanel extends JPanel implements RefreshablePanel {
             card.add(titulo, BorderLayout.NORTH);
             card.add(resumen, BorderLayout.CENTER);
             JButton verMas = new JButton("Ver Detalles");
-            AppTheme.estilizarBotonSecundario(verMas);
+            AppTheme.estilizarBotonInfo(verMas);
             verMas.addActionListener(e -> seleccionarJuego(juego));
             card.add(verMas, BorderLayout.SOUTH);
             catalogoGrid.add(card);
@@ -249,8 +269,6 @@ public class TiendaPanel extends JPanel implements RefreshablePanel {
 
     private class CartTableModel extends AbstractTableModel {
 
-        private final String[] columnas = {"Codigo", "Juego", "Cantidad", "Precio", "Subtotal"};
-
         @Override
         public int getRowCount() {
             return service.getCarrito().tamanio();
@@ -258,12 +276,24 @@ public class TiendaPanel extends JPanel implements RefreshablePanel {
 
         @Override
         public int getColumnCount() {
-            return columnas.length;
+            return 5;
         }
 
         @Override
         public String getColumnName(int column) {
-            return columnas[column];
+            if (column == 0) {
+                return "Codigo";
+            }
+            if (column == 1) {
+                return "Juego";
+            }
+            if (column == 2) {
+                return "Cantidad";
+            }
+            if (column == 3) {
+                return "Precio";
+            }
+            return "Subtotal";
         }
 
         @Override
@@ -302,8 +332,6 @@ public class TiendaPanel extends JPanel implements RefreshablePanel {
 
     private class HistoryTableModel extends AbstractTableModel {
 
-        private final String[] columnas = {"Fecha", "Items", "Total", "Resumen"};
-
         @Override
         public int getRowCount() {
             return service.getHistorial().tamanio();
@@ -311,12 +339,21 @@ public class TiendaPanel extends JPanel implements RefreshablePanel {
 
         @Override
         public int getColumnCount() {
-            return columnas.length;
+            return 4;
         }
 
         @Override
         public String getColumnName(int column) {
-            return columnas[column];
+            if (column == 0) {
+                return "Fecha";
+            }
+            if (column == 1) {
+                return "Items";
+            }
+            if (column == 2) {
+                return "Total";
+            }
+            return "Resumen";
         }
 
         @Override

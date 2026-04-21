@@ -55,9 +55,10 @@ public class AlbumPanel extends JPanel implements RefreshablePanel {
         controles.add(AppTheme.subtitulo("Agregar desde catalogo"));
         controles.add(new JLabel(""));
         buscarField = new JTextField();
-        catalogoCombo = new JComboBox<String>(construirOpcionesCatalogo());
+        catalogoCombo = new JComboBox<String>();
+        cargarOpcionesCatalogo();
         JButton agregarCatalogoButton = new JButton("Agregar Carta");
-        AppTheme.estilizarBotonPrimario(agregarCatalogoButton);
+        AppTheme.estilizarBotonExito(agregarCatalogoButton);
         controles.add(buscarField);
         controles.add(catalogoCombo);
         controles.add(agregarCatalogoButton);
@@ -87,8 +88,8 @@ public class AlbumPanel extends JPanel implements RefreshablePanel {
         seleccionLabel.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 13));
         JButton crearManualButton = new JButton("Crear Carta Manual");
         JButton intercambiarButton = new JButton("Intercambiar Seleccionadas");
-        AppTheme.estilizarBotonSecundario(crearManualButton);
-        AppTheme.estilizarBotonPrimario(intercambiarButton);
+        AppTheme.estilizarBotonInfo(crearManualButton);
+        AppTheme.estilizarBotonAdvertencia(intercambiarButton);
         acciones.add(seleccionLabel);
         acciones.add(crearManualButton);
         acciones.add(intercambiarButton);
@@ -123,17 +124,12 @@ public class AlbumPanel extends JPanel implements RefreshablePanel {
         refreshData();
     }
 
-    private String[] construirOpcionesCatalogo() {
-        int tamanio = service.getCatalogoCartas().tamanio();
-        String[] opciones = new String[tamanio];
+    private void cargarOpcionesCatalogo() {
         NodoSimple<Carta> actual = service.getCatalogoCartas().getCabeza();
-        int indice = 0;
         while (actual != null) {
-            opciones[indice] = actual.getDato().getCodigo();
+            catalogoCombo.addItem(actual.getDato().getCodigo());
             actual = actual.getSiguiente();
-            indice++;
         }
-        return opciones;
     }
 
     private void agregarDesdeCatalogo() {
@@ -147,8 +143,10 @@ public class AlbumPanel extends JPanel implements RefreshablePanel {
     private void crearManual() {
         JTextField codigoField = new JTextField();
         JTextField nombreField = new JTextField();
-        JComboBox<String> tipoCombo = new JComboBox<String>(new String[]{"Fuego", "Agua", "Planta", "Electrico", "Psiquico", "Normal", "Oscuro", "Acero"});
-        JComboBox<String> rarezaCombo = new JComboBox<String>(new String[]{"Comun", "Poco Comun", "Rara", "Ultra Rara", "Legendaria"});
+        JComboBox<String> tipoCombo = new JComboBox<String>();
+        JComboBox<String> rarezaCombo = new JComboBox<String>();
+        cargarTiposCarta(tipoCombo);
+        cargarRarezasCarta(rarezaCombo);
         JTextField ataqueField = new JTextField();
         JTextField defensaField = new JTextField();
         JTextField saludField = new JTextField();
@@ -188,6 +186,25 @@ public class AlbumPanel extends JPanel implements RefreshablePanel {
             refreshData();
             JOptionPane.showMessageDialog(this, resultado.getMensaje(), "Album", resultado.isExito() ? JOptionPane.INFORMATION_MESSAGE : JOptionPane.WARNING_MESSAGE);
         }
+    }
+
+    private void cargarTiposCarta(JComboBox<String> tipoCombo) {
+        tipoCombo.addItem("Fuego");
+        tipoCombo.addItem("Agua");
+        tipoCombo.addItem("Planta");
+        tipoCombo.addItem("Electrico");
+        tipoCombo.addItem("Psiquico");
+        tipoCombo.addItem("Normal");
+        tipoCombo.addItem("Oscuro");
+        tipoCombo.addItem("Acero");
+    }
+
+    private void cargarRarezasCarta(JComboBox<String> rarezaCombo) {
+        rarezaCombo.addItem("Comun");
+        rarezaCombo.addItem("Poco Comun");
+        rarezaCombo.addItem("Rara");
+        rarezaCombo.addItem("Ultra Rara");
+        rarezaCombo.addItem("Legendaria");
     }
 
     private void intercambiar() {

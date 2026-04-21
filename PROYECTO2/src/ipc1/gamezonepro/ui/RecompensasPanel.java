@@ -1,5 +1,6 @@
 package ipc1.gamezonepro.ui;
 
+import ipc1.gamezonepro.datastructures.ListaEnlazadaSimple;
 import ipc1.gamezonepro.datastructures.NodoSimple;
 import ipc1.gamezonepro.model.LeaderboardEntry;
 import ipc1.gamezonepro.model.Logro;
@@ -149,25 +150,29 @@ public class RecompensasPanel extends JPanel implements RefreshablePanel {
 
     private class LeaderboardTableModel extends AbstractTableModel {
 
-        private final String[] columnas = {"#", "Jugador", "XP"};
-
         @Override
         public int getRowCount() {
-            LeaderboardEntry[] ranking = service.obtenerRankingCompletoOrdenado();
-            if (ranking.length <= 10) {
-                return ranking.length;
+            ListaEnlazadaSimple<LeaderboardEntry> ranking = service.obtenerRankingCompletoOrdenado();
+            if (ranking.tamanio() <= 10) {
+                return ranking.tamanio();
             }
             return service.obtenerPosicionUsuario() > 10 ? 11 : 10;
         }
 
         @Override
         public int getColumnCount() {
-            return columnas.length;
+            return 3;
         }
 
         @Override
         public String getColumnName(int column) {
-            return columnas[column];
+            if (column == 0) {
+                return "#";
+            }
+            if (column == 1) {
+                return "Jugador";
+            }
+            return "XP";
         }
 
         @Override
@@ -184,18 +189,18 @@ public class RecompensasPanel extends JPanel implements RefreshablePanel {
         }
 
         private LeaderboardEntry obtenerEntry(int fila) {
-            LeaderboardEntry[] ranking = service.obtenerRankingCompletoOrdenado();
-            if (ranking.length == 0) {
+            ListaEnlazadaSimple<LeaderboardEntry> ranking = service.obtenerRankingCompletoOrdenado();
+            if (ranking.estaVacia()) {
                 return new LeaderboardEntry("-", 0, false);
             }
-            if (fila < 10 && fila < ranking.length) {
-                return ranking[fila];
+            if (fila < 10 && fila < ranking.tamanio()) {
+                return ranking.obtener(fila);
             }
             int posicionUsuario = service.obtenerPosicionUsuario();
-            if (posicionUsuario > 10 && posicionUsuario - 1 < ranking.length) {
-                return ranking[posicionUsuario - 1];
+            if (posicionUsuario > 10 && posicionUsuario - 1 < ranking.tamanio()) {
+                return ranking.obtener(posicionUsuario - 1);
             }
-            return ranking[ranking.length - 1];
+            return ranking.obtener(ranking.tamanio() - 1);
         }
 
         private int obtenerPosicion(int fila) {

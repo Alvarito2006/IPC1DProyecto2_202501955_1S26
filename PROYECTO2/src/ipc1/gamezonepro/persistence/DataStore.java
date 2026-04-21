@@ -50,16 +50,16 @@ public final class DataStore {
             if (linea.isEmpty()) {
                 continue;
             }
-            String[] partes = linea.split("\\|", -1);
-            if (partes.length >= 7) {
+            ListaEnlazadaSimple<String> partes = separar(linea, '|');
+            if (partes.tamanio() >= 7) {
                 catalogo.agregar(new Videojuego(
-                        partes[0],
-                        partes[1],
-                        partes[2],
-                        FormatoUtil.decimalSeguro(partes[3]),
-                        partes[4],
-                        FormatoUtil.enteroSeguro(partes[5]),
-                        partes[6]));
+                        partes.obtener(0),
+                        partes.obtener(1),
+                        partes.obtener(2),
+                        FormatoUtil.decimalSeguro(partes.obtener(3)),
+                        partes.obtener(4),
+                        FormatoUtil.enteroSeguro(partes.obtener(5)),
+                        partes.obtener(6)));
             }
         }
         scanner.close();
@@ -86,17 +86,17 @@ public final class DataStore {
             if (linea.isEmpty()) {
                 continue;
             }
-            String[] partes = linea.split("\\|", -1);
-            if (partes.length >= 8) {
+            ListaEnlazadaSimple<String> partes = separar(linea, '|');
+            if (partes.tamanio() >= 8) {
                 cartas.agregar(new Carta(
-                        partes[0],
-                        partes[1],
-                        partes[2],
-                        partes[3],
-                        FormatoUtil.enteroSeguro(partes[4]),
-                        FormatoUtil.enteroSeguro(partes[5]),
-                        FormatoUtil.enteroSeguro(partes[6]),
-                        partes[7]));
+                        partes.obtener(0),
+                        partes.obtener(1),
+                        partes.obtener(2),
+                        partes.obtener(3),
+                        FormatoUtil.enteroSeguro(partes.obtener(4)),
+                        FormatoUtil.enteroSeguro(partes.obtener(5)),
+                        FormatoUtil.enteroSeguro(partes.obtener(6)),
+                        partes.obtener(7)));
             }
         }
         scanner.close();
@@ -111,25 +111,25 @@ public final class DataStore {
             if (linea.isEmpty()) {
                 continue;
             }
-            String[] partes = linea.split("\\|", 3);
-            if (partes.length >= 3) {
+            ListaEnlazadaSimple<String> partes = separar(linea, '|', 3);
+            if (partes.tamanio() >= 3) {
                 ListaEnlazadaSimple<CompraDetalle> detalles = new ListaEnlazadaSimple<CompraDetalle>();
-                String[] detallePartes = partes[2].split(";");
-                for (int i = 0; i < detallePartes.length; i++) {
-                    String detalleTexto = detallePartes[i].trim();
+                ListaEnlazadaSimple<String> detallePartes = separar(partes.obtener(2), ';');
+                for (int i = 0; i < detallePartes.tamanio(); i++) {
+                    String detalleTexto = detallePartes.obtener(i).trim();
                     if (detalleTexto.isEmpty()) {
                         continue;
                     }
-                    String[] campos = detalleTexto.split("~", -1);
-                    if (campos.length >= 4) {
+                    ListaEnlazadaSimple<String> campos = separar(detalleTexto, '~');
+                    if (campos.tamanio() >= 4) {
                         detalles.agregar(new CompraDetalle(
-                                campos[0],
-                                campos[1],
-                                FormatoUtil.enteroSeguro(campos[2]),
-                                FormatoUtil.decimalSeguro(campos[3])));
+                                campos.obtener(0),
+                                campos.obtener(1),
+                                FormatoUtil.enteroSeguro(campos.obtener(2)),
+                                FormatoUtil.decimalSeguro(campos.obtener(3))));
                     }
                 }
-                historial.agregar(new Compra(LocalDateTime.parse(partes[0]), detalles, FormatoUtil.decimalSeguro(partes[1])));
+                historial.agregar(new Compra(LocalDateTime.parse(partes.obtener(0)), detalles, FormatoUtil.decimalSeguro(partes.obtener(1))));
             }
         }
         scanner.close();
@@ -167,10 +167,10 @@ public final class DataStore {
         if (scanner.hasNextLine()) {
             String dimensiones = scanner.nextLine().trim();
             if (!dimensiones.isEmpty()) {
-                String[] partes = dimensiones.split("\\|");
-                if (partes.length >= 2) {
-                    filas = FormatoUtil.enteroSeguro(partes[0]);
-                    columnas = FormatoUtil.enteroSeguro(partes[1]);
+                ListaEnlazadaSimple<String> partes = separar(dimensiones, '|');
+                if (partes.tamanio() >= 2) {
+                    filas = FormatoUtil.enteroSeguro(partes.obtener(0));
+                    columnas = FormatoUtil.enteroSeguro(partes.obtener(1));
                 }
             }
         }
@@ -181,19 +181,19 @@ public final class DataStore {
             if (linea.isEmpty()) {
                 continue;
             }
-            String[] partes = linea.split("\\|", -1);
-            if (partes.length >= 10) {
-                int fila = FormatoUtil.enteroSeguro(partes[0]);
-                int columna = FormatoUtil.enteroSeguro(partes[1]);
+            ListaEnlazadaSimple<String> partes = separar(linea, '|');
+            if (partes.tamanio() >= 10) {
+                int fila = FormatoUtil.enteroSeguro(partes.obtener(0));
+                int columna = FormatoUtil.enteroSeguro(partes.obtener(1));
                 Carta carta = new Carta(
-                        partes[2],
-                        partes[3],
-                        partes[4],
-                        partes[5],
-                        FormatoUtil.enteroSeguro(partes[6]),
-                        FormatoUtil.enteroSeguro(partes[7]),
-                        FormatoUtil.enteroSeguro(partes[8]),
-                        partes[9]);
+                        partes.obtener(2),
+                        partes.obtener(3),
+                        partes.obtener(4),
+                        partes.obtener(5),
+                        FormatoUtil.enteroSeguro(partes.obtener(6)),
+                        FormatoUtil.enteroSeguro(partes.obtener(7)),
+                        FormatoUtil.enteroSeguro(partes.obtener(8)),
+                        partes.obtener(9));
                 album.colocarCarta(fila, columna, carta);
             }
         }
@@ -230,16 +230,16 @@ public final class DataStore {
             if (linea.isEmpty()) {
                 continue;
             }
-            String[] partes = linea.split("\\|", -1);
-            if (partes.length >= 7) {
+            ListaEnlazadaSimple<String> partes = separar(linea, '|');
+            if (partes.tamanio() >= 7) {
                 torneos.agregar(new Torneo(
-                        partes[0],
-                        partes[1],
-                        partes[2],
-                        partes[3],
-                        partes[4],
-                        FormatoUtil.decimalSeguro(partes[5]),
-                        FormatoUtil.enteroSeguro(partes[6])));
+                        partes.obtener(0),
+                        partes.obtener(1),
+                        partes.obtener(2),
+                        partes.obtener(3),
+                        partes.obtener(4),
+                        FormatoUtil.decimalSeguro(partes.obtener(5)),
+                        FormatoUtil.enteroSeguro(partes.obtener(6))));
             }
         }
         scanner.close();
@@ -267,15 +267,15 @@ public final class DataStore {
             if (linea.isEmpty()) {
                 continue;
             }
-            String[] partes = linea.split("\\|", -1);
-            if (partes.length >= 6) {
+            ListaEnlazadaSimple<String> partes = separar(linea, '|');
+            if (partes.tamanio() >= 6) {
                 tickets.agregarAlInicio(new TicketVenta(
-                        LocalDateTime.parse(partes[0]),
-                        partes[1],
-                        partes[2],
-                        partes[3],
-                        partes[4],
-                        FormatoUtil.decimalSeguro(partes[5])));
+                        LocalDateTime.parse(partes.obtener(0)),
+                        partes.obtener(1),
+                        partes.obtener(2),
+                        partes.obtener(3),
+                        partes.obtener(4),
+                        FormatoUtil.decimalSeguro(partes.obtener(5))));
             }
         }
         scanner.close();
@@ -302,9 +302,9 @@ public final class DataStore {
             if (linea.isEmpty()) {
                 continue;
             }
-            String[] partes = linea.split("\\|", -1);
-            if (partes.length >= 2) {
-                leaderboard.agregar(new LeaderboardEntry(partes[0], FormatoUtil.enteroSeguro(partes[1]), false));
+            ListaEnlazadaSimple<String> partes = separar(linea, '|');
+            if (partes.tamanio() >= 2) {
+                leaderboard.agregar(new LeaderboardEntry(partes.obtener(0), FormatoUtil.enteroSeguro(partes.obtener(1)), false));
             }
         }
         scanner.close();
@@ -327,26 +327,26 @@ public final class DataStore {
         Scanner scanner = crearScanner(DataPaths.PERFIL);
         if (scanner.hasNextLine()) {
             String linea = scanner.nextLine().trim();
-            String[] partes = linea.split("\\|", -1);
-            if (partes.length >= 8) {
-                usuario = new UsuarioProgreso(partes[0], partes[1]);
-                usuario.setXp(FormatoUtil.enteroSeguro(partes[2]));
-                usuario.sumarDineroGastado(FormatoUtil.decimalSeguro(partes[3]));
-                usuario.sumarJuegosComprados(FormatoUtil.enteroSeguro(partes[4]));
-                usuario.setCartasEnAlbum(FormatoUtil.enteroSeguro(partes[5]));
-                int legendarias = FormatoUtil.enteroSeguro(partes[6]);
-                int filas = FormatoUtil.enteroSeguro(partes[7]);
+            ListaEnlazadaSimple<String> partes = separar(linea, '|');
+            if (partes.tamanio() >= 8) {
+                usuario = new UsuarioProgreso(partes.obtener(0), partes.obtener(1));
+                usuario.setXp(FormatoUtil.enteroSeguro(partes.obtener(2)));
+                usuario.sumarDineroGastado(FormatoUtil.decimalSeguro(partes.obtener(3)));
+                usuario.sumarJuegosComprados(FormatoUtil.enteroSeguro(partes.obtener(4)));
+                usuario.setCartasEnAlbum(FormatoUtil.enteroSeguro(partes.obtener(5)));
+                int legendarias = FormatoUtil.enteroSeguro(partes.obtener(6));
+                int filas = FormatoUtil.enteroSeguro(partes.obtener(7));
                 for (int i = 0; i < legendarias; i++) {
                     usuario.incrementarCartasLegendarias();
                 }
                 for (int i = 0; i < filas; i++) {
                     usuario.incrementarFilasCompletas();
                 }
-                if (partes.length >= 9 && !partes[8].isEmpty()) {
-                    String[] torneos = partes[8].split(",");
-                    for (int i = 0; i < torneos.length; i++) {
-                        if (!torneos[i].trim().isEmpty()) {
-                            usuario.registrarTorneoSiNoExiste(torneos[i].trim());
+                if (partes.tamanio() >= 9 && !partes.obtener(8).isEmpty()) {
+                    ListaEnlazadaSimple<String> torneos = separar(partes.obtener(8), ',');
+                    for (int i = 0; i < torneos.tamanio(); i++) {
+                        if (!torneos.obtener(i).trim().isEmpty()) {
+                            usuario.registrarTorneoSiNoExiste(torneos.obtener(i).trim());
                         }
                     }
                 }
@@ -382,12 +382,12 @@ public final class DataStore {
             if (linea.isEmpty()) {
                 continue;
             }
-            String[] partes = linea.split("\\|", -1);
-            if (partes.length >= 4) {
-                Logro logro = buscarLogro(base, partes[0]);
+            ListaEnlazadaSimple<String> partes = separar(linea, '|');
+            if (partes.tamanio() >= 4) {
+                Logro logro = buscarLogro(base, partes.obtener(0));
                 if (logro != null) {
-                    logro.setDesbloqueado(Boolean.parseBoolean(partes[2]));
-                    logro.setFechaDesbloqueo(partes[3].isEmpty() ? null : partes[3]);
+                    logro.setDesbloqueado(Boolean.parseBoolean(partes.obtener(2)));
+                    logro.setFechaDesbloqueo(partes.obtener(3).isEmpty() ? null : partes.obtener(3));
                 }
             }
         }
@@ -412,9 +412,9 @@ public final class DataStore {
         EstudianteInfo estudiante = null;
         if (scanner.hasNextLine()) {
             String linea = scanner.nextLine().trim();
-            String[] partes = linea.split("\\|", -1);
-            if (partes.length >= 7) {
-                estudiante = new EstudianteInfo(partes[0], partes[1], partes[2], partes[3], partes[4], partes[5], partes[6]);
+            ListaEnlazadaSimple<String> partes = separar(linea, '|');
+            if (partes.tamanio() >= 7) {
+                estudiante = new EstudianteInfo(partes.obtener(0), partes.obtener(1), partes.obtener(2), partes.obtener(3), partes.obtener(4), partes.obtener(5), partes.obtener(6));
             }
         }
         scanner.close();
@@ -470,6 +470,28 @@ public final class DataStore {
         } catch (IOException ex) {
             throw new IllegalStateException("No se pudo crear el archivo inicial: " + ruta, ex);
         }
+    }
+
+    private static ListaEnlazadaSimple<String> separar(String texto, char separador) {
+        return separar(texto, separador, 0);
+    }
+
+    private static ListaEnlazadaSimple<String> separar(String texto, char separador, int limite) {
+        ListaEnlazadaSimple<String> partes = new ListaEnlazadaSimple<String>();
+        StringBuilder acumulado = new StringBuilder();
+        int cortes = 1;
+        for (int i = 0; i < texto.length(); i++) {
+            char actual = texto.charAt(i);
+            if (actual == separador && (limite <= 0 || cortes < limite)) {
+                partes.agregar(acumulado.toString());
+                acumulado.setLength(0);
+                cortes++;
+            } else {
+                acumulado.append(actual);
+            }
+        }
+        partes.agregar(acumulado.toString());
+        return partes;
     }
 
     private static String catalogoInicial() {

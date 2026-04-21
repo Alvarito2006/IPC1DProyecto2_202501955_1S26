@@ -66,8 +66,8 @@ public class TorneosPanel extends JPanel implements RefreshablePanel {
         nombreUsuarioField = new JTextField(nombreActual);
         JButton inscribirButton = new JButton("Inscribirse a la Cola");
         JButton iniciarButton = new JButton("Iniciar Taquillas");
-        AppTheme.estilizarBotonSecundario(inscribirButton);
-        AppTheme.estilizarBotonPrimario(iniciarButton);
+        AppTheme.estilizarBotonInfo(inscribirButton);
+        AppTheme.estilizarBotonExito(iniciarButton);
         JPanel acciones = new JPanel(new GridLayout(0, 1, 8, 8));
         acciones.setOpaque(false);
         acciones.add(new JLabel("Nombre del participante"));
@@ -219,8 +219,6 @@ public class TorneosPanel extends JPanel implements RefreshablePanel {
 
     private class TorneosTableModel extends AbstractTableModel {
 
-        private final String[] columnas = {"ID", "Torneo", "Juego", "Fecha", "Precio", "Disponibles"};
-
         @Override
         public int getRowCount() {
             return service.getTorneos().tamanio();
@@ -228,12 +226,27 @@ public class TorneosPanel extends JPanel implements RefreshablePanel {
 
         @Override
         public int getColumnCount() {
-            return columnas.length;
+            return 6;
         }
 
         @Override
         public String getColumnName(int column) {
-            return columnas[column];
+            if (column == 0) {
+                return "ID";
+            }
+            if (column == 1) {
+                return "Torneo";
+            }
+            if (column == 2) {
+                return "Juego";
+            }
+            if (column == 3) {
+                return "Fecha";
+            }
+            if (column == 4) {
+                return "Precio";
+            }
+            return "Disponibles";
         }
 
         @Override
@@ -260,8 +273,6 @@ public class TorneosPanel extends JPanel implements RefreshablePanel {
 
     private class TicketsTableModel extends AbstractTableModel {
 
-        private final String[] columnas = {"Fecha", "Torneo", "Comprador", "Taquilla", "Precio"};
-
         @Override
         public int getRowCount() {
             return service.getTicketsVendidos().tamanio();
@@ -269,12 +280,24 @@ public class TorneosPanel extends JPanel implements RefreshablePanel {
 
         @Override
         public int getColumnCount() {
-            return columnas.length;
+            return 5;
         }
 
         @Override
         public String getColumnName(int column) {
-            return columnas[column];
+            if (column == 0) {
+                return "Fecha";
+            }
+            if (column == 1) {
+                return "Torneo";
+            }
+            if (column == 2) {
+                return "Comprador";
+            }
+            if (column == 3) {
+                return "Taquilla";
+            }
+            return "Precio";
         }
 
         @Override

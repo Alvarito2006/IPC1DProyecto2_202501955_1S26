@@ -1,28 +1,40 @@
 package ipc1.gamezonepro.util;
 
-import java.text.DecimalFormat;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public final class FormatoUtil {
-
-    private static final DecimalFormat MONEDA = new DecimalFormat("Q#,##0.00");
-    private static final DateTimeFormatter FECHA_HORA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-    private static final DateTimeFormatter ARCHIVO = DateTimeFormatter.ofPattern("dd_MM_yyyy_HH_mm_ss");
 
     private FormatoUtil() {
     }
 
     public static String moneda(double valor) {
-        return MONEDA.format(valor);
+        boolean negativo = valor < 0;
+        long centavos = Math.round(Math.abs(valor) * 100.0);
+        long parteEntera = centavos / 100;
+        long parteDecimal = centavos % 100;
+        String texto = "Q" + formatearMiles(parteEntera) + "." + dosDigitos((int) parteDecimal);
+        if (negativo) {
+            return "-" + texto;
+        }
+        return texto;
     }
 
     public static String fechaHora(LocalDateTime fechaHora) {
-        return FECHA_HORA.format(fechaHora);
+        return dosDigitos(fechaHora.getDayOfMonth()) + "/"
+                + dosDigitos(fechaHora.getMonthValue()) + "/"
+                + fechaHora.getYear() + " "
+                + dosDigitos(fechaHora.getHour()) + ":"
+                + dosDigitos(fechaHora.getMinute()) + ":"
+                + dosDigitos(fechaHora.getSecond());
     }
 
     public static String fechaHoraArchivo(LocalDateTime fechaHora) {
-        return ARCHIVO.format(fechaHora);
+        return dosDigitos(fechaHora.getDayOfMonth()) + "_"
+                + dosDigitos(fechaHora.getMonthValue()) + "_"
+                + fechaHora.getYear() + "_"
+                + dosDigitos(fechaHora.getHour()) + "_"
+                + dosDigitos(fechaHora.getMinute()) + "_"
+                + dosDigitos(fechaHora.getSecond());
     }
 
     public static int enteroSeguro(String texto) {
@@ -53,5 +65,27 @@ public final class FormatoUtil {
                 .replace("<", "&lt;")
                 .replace(">", "&gt;")
                 .replace("\"", "&quot;");
+    }
+
+    private static String dosDigitos(int valor) {
+        if (valor < 10) {
+            return "0" + valor;
+        }
+        return String.valueOf(valor);
+    }
+
+    private static String formatearMiles(long valor) {
+        String texto = String.valueOf(valor);
+        StringBuilder invertido = new StringBuilder();
+        int contador = 0;
+        for (int i = texto.length() - 1; i >= 0; i--) {
+            invertido.append(texto.charAt(i));
+            contador++;
+            if (contador == 3 && i > 0) {
+                invertido.append(',');
+                contador = 0;
+            }
+        }
+        return invertido.reverse().toString();
     }
 }

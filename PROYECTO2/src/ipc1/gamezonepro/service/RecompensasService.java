@@ -161,35 +161,27 @@ public class RecompensasService {
         return leaderboard;
     }
 
-    public LeaderboardEntry[] obtenerRankingCompletoOrdenado() {
+    public ListaEnlazadaSimple<LeaderboardEntry> obtenerRankingCompletoOrdenado() {
         sincronizarEntradaUsuario();
-        LeaderboardEntry[] arreglo = new LeaderboardEntry[leaderboard.tamanio()];
+        ListaEnlazadaSimple<LeaderboardEntry> copia = new ListaEnlazadaSimple<LeaderboardEntry>();
         NodoSimple<LeaderboardEntry> actual = leaderboard.getCabeza();
-        int indice = 0;
         while (actual != null) {
             LeaderboardEntry origen = actual.getDato();
-            arreglo[indice] = new LeaderboardEntry(origen.getNombre(), origen.getXp(), origen.isUsuarioActual());
+            copia.agregar(new LeaderboardEntry(origen.getNombre(), origen.getXp(), origen.isUsuarioActual()));
             actual = actual.getSiguiente();
-            indice++;
         }
-        for (int i = 0; i < arreglo.length; i++) {
-            int mayor = i;
-            for (int j = i + 1; j < arreglo.length; j++) {
-                if (arreglo[j].getXp() > arreglo[mayor].getXp()) {
-                    mayor = j;
-                }
-            }
-            LeaderboardEntry temporal = arreglo[i];
-            arreglo[i] = arreglo[mayor];
-            arreglo[mayor] = temporal;
+        ListaEnlazadaSimple<LeaderboardEntry> ordenado = new ListaEnlazadaSimple<LeaderboardEntry>();
+        while (!copia.estaVacia()) {
+            int indiceMayor = encontrarIndiceMayor(copia);
+            ordenado.agregar(copia.eliminarEn(indiceMayor));
         }
-        return arreglo;
+        return ordenado;
     }
 
     public int obtenerPosicionUsuario() {
-        LeaderboardEntry[] ranking = obtenerRankingCompletoOrdenado();
-        for (int i = 0; i < ranking.length; i++) {
-            if (ranking[i].isUsuarioActual()) {
+        ListaEnlazadaSimple<LeaderboardEntry> ranking = obtenerRankingCompletoOrdenado();
+        for (int i = 0; i < ranking.tamanio(); i++) {
+            if (ranking.obtener(i).isUsuarioActual()) {
                 return i + 1;
             }
         }
@@ -254,5 +246,17 @@ public class RecompensasService {
             actual = actual.getSiguiente();
         }
         leaderboard.agregar(new LeaderboardEntry(usuario.getNombre(), usuario.getXp(), true));
+    }
+
+    private int encontrarIndiceMayor(ListaEnlazadaSimple<LeaderboardEntry> lista) {
+        int indiceMayor = 0;
+        int mayorXp = lista.obtener(0).getXp();
+        for (int i = 1; i < lista.tamanio(); i++) {
+            if (lista.obtener(i).getXp() > mayorXp) {
+                mayorXp = lista.obtener(i).getXp();
+                indiceMayor = i;
+            }
+        }
+        return indiceMayor;
     }
 }

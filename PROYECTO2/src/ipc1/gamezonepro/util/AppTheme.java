@@ -25,6 +25,8 @@ public final class AppTheme {
     public static final Color BORDE = new Color(209, 219, 231);
     public static final Color ALERTA = new Color(190, 24, 93);
     public static final Color DORADO = new Color(245, 158, 11);
+    public static final Color INFO = new Color(37, 99, 235);
+    public static final Color PELIGRO = new Color(220, 38, 38);
 
     private AppTheme() {
     }
@@ -64,19 +66,51 @@ public final class AppTheme {
     }
 
     public static void estilizarBotonPrimario(JButton boton) {
-        prepararBotonBase(boton, new Color(217, 243, 239), PRINCIPAL);
+        estilizarBotonExito(boton);
+    }
+
+    public static void estilizarBotonExito(JButton boton) {
+        prepararBotonBase(boton, new Color(220, 252, 231), PRINCIPAL);
     }
 
     public static void estilizarBotonSecundario(JButton boton) {
-        prepararBotonBase(boton, new Color(226, 232, 240), BORDE);
+        estilizarBotonNeutro(boton);
+    }
+
+    public static void estilizarBotonNeutro(JButton boton) {
+        prepararBotonBase(boton, new Color(248, 250, 252), BORDE);
+    }
+
+    public static void estilizarBotonInfo(JButton boton) {
+        prepararBotonBase(boton, new Color(219, 234, 254), INFO);
+    }
+
+    public static void estilizarBotonAdvertencia(JButton boton) {
+        prepararBotonBase(boton, new Color(254, 243, 199), new Color(217, 119, 6));
+    }
+
+    public static void estilizarBotonPeligro(JButton boton) {
+        prepararBotonBase(boton, new Color(254, 226, 226), PELIGRO);
     }
 
     public static void estilizarBotonMenu(JButton boton) {
+        prepararBotonMenuBase(boton, new Color(239, 244, 250), new Color(191, 219, 254));
+    }
+
+    public static void estilizarBotonMenuActivo(JButton boton) {
+        prepararBotonMenuBase(boton, new Color(219, 234, 254), INFO);
+    }
+
+    public static void estilizarBotonMenuPeligro(JButton boton) {
+        prepararBotonMenuBase(boton, new Color(254, 226, 226), PELIGRO);
+    }
+
+    private static void prepararBotonMenuBase(JButton boton, Color fondo, Color borde) {
         boton.setHorizontalAlignment(SwingConstants.LEFT);
-        prepararBotonBase(boton, new Color(239, 244, 250), new Color(191, 219, 254));
+        prepararBotonBase(boton, fondo, borde);
         boton.setFont(new Font("Segoe UI", Font.BOLD, 14));
         boton.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(new Color(191, 219, 254)),
+                BorderFactory.createLineBorder(borde),
                 BorderFactory.createEmptyBorder(12, 16, 12, 16)));
         boton.setMaximumSize(new Dimension(Integer.MAX_VALUE, 44));
         boton.setAlignmentX(Component.LEFT_ALIGNMENT);

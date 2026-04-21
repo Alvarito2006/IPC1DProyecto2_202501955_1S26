@@ -30,6 +30,12 @@ public class MainFrame extends JFrame {
     private final RecompensasPanel recompensasPanel;
     private final ReportesPanel reportesPanel;
     private final EstudiantePanel estudiantePanel;
+    private JButton tiendaMenuButton;
+    private JButton albumMenuButton;
+    private JButton torneosMenuButton;
+    private JButton recompensasMenuButton;
+    private JButton reportesMenuButton;
+    private JButton estudianteMenuButton;
 
     public MainFrame(AppContext context) {
         this.context = context;
@@ -114,22 +120,27 @@ public class MainFrame extends JFrame {
         usuario.setAlignmentX(LEFT_ALIGNMENT);
         sidebar.add(usuario);
         sidebar.add(Box.createVerticalStrut(20));
-        sidebar.add(crearBotonMenu("Tienda de Videojuegos", "TIENDA"));
+        tiendaMenuButton = crearBotonMenu("Tienda de Videojuegos", "TIENDA");
+        sidebar.add(tiendaMenuButton);
         sidebar.add(Box.createVerticalStrut(8));
-        sidebar.add(crearBotonMenu("Album de Cartas", "ALBUM"));
+        albumMenuButton = crearBotonMenu("Album de Cartas", "ALBUM");
+        sidebar.add(albumMenuButton);
         sidebar.add(Box.createVerticalStrut(8));
-        sidebar.add(crearBotonMenu("Eventos Especiales", "TORNEOS"));
+        torneosMenuButton = crearBotonMenu("Eventos Especiales", "TORNEOS");
+        sidebar.add(torneosMenuButton);
         sidebar.add(Box.createVerticalStrut(8));
-        sidebar.add(crearBotonMenu("Recompensas y Lideres", "RECOMPENSAS"));
+        recompensasMenuButton = crearBotonMenu("Recompensas y Lideres", "RECOMPENSAS");
+        sidebar.add(recompensasMenuButton);
         sidebar.add(Box.createVerticalStrut(8));
-        sidebar.add(crearBotonMenu("Reportes", "REPORTES"));
+        reportesMenuButton = crearBotonMenu("Reportes", "REPORTES");
+        sidebar.add(reportesMenuButton);
         sidebar.add(Box.createVerticalStrut(8));
-        sidebar.add(crearBotonMenu("Datos del Estudiante", "ESTUDIANTE"));
+        estudianteMenuButton = crearBotonMenu("Datos del Estudiante", "ESTUDIANTE");
+        sidebar.add(estudianteMenuButton);
         sidebar.add(Box.createVerticalGlue());
 
         JButton salir = new JButton("Salir");
-        AppTheme.estilizarBotonMenu(salir);
-        salir.setBackground(new java.awt.Color(254, 226, 226));
+        AppTheme.estilizarBotonMenuPeligro(salir);
         salir.addActionListener(e -> cerrarAplicacion());
         sidebar.add(salir);
         return sidebar;
@@ -144,6 +155,7 @@ public class MainFrame extends JFrame {
 
     private void mostrarPanel(String tarjeta) {
         cardLayout.show(contentPanel, tarjeta);
+        actualizarEstadoMenu(tarjeta);
         tiendaPanel.refreshData();
         albumPanel.refreshData();
         torneosPanel.refreshData();
@@ -151,6 +163,29 @@ public class MainFrame extends JFrame {
         reportesPanel.refreshData();
         estudiantePanel.refreshData();
         refreshGlobalStatus();
+    }
+
+    private void actualizarEstadoMenu(String tarjeta) {
+        AppTheme.estilizarBotonMenu(tiendaMenuButton);
+        AppTheme.estilizarBotonMenu(albumMenuButton);
+        AppTheme.estilizarBotonMenu(torneosMenuButton);
+        AppTheme.estilizarBotonMenu(recompensasMenuButton);
+        AppTheme.estilizarBotonMenu(reportesMenuButton);
+        AppTheme.estilizarBotonMenu(estudianteMenuButton);
+
+        if ("TIENDA".equals(tarjeta)) {
+            AppTheme.estilizarBotonMenuActivo(tiendaMenuButton);
+        } else if ("ALBUM".equals(tarjeta)) {
+            AppTheme.estilizarBotonMenuActivo(albumMenuButton);
+        } else if ("TORNEOS".equals(tarjeta)) {
+            AppTheme.estilizarBotonMenuActivo(torneosMenuButton);
+        } else if ("RECOMPENSAS".equals(tarjeta)) {
+            AppTheme.estilizarBotonMenuActivo(recompensasMenuButton);
+        } else if ("REPORTES".equals(tarjeta)) {
+            AppTheme.estilizarBotonMenuActivo(reportesMenuButton);
+        } else if ("ESTUDIANTE".equals(tarjeta)) {
+            AppTheme.estilizarBotonMenuActivo(estudianteMenuButton);
+        }
     }
 
     private void refreshGlobalStatus() {

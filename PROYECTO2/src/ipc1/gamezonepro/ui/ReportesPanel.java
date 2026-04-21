@@ -68,7 +68,7 @@ public class ReportesPanel extends JPanel implements RefreshablePanel {
         tarjeta.add(descripcionLabel, BorderLayout.CENTER);
 
         JButton boton = new JButton("Generar Reporte");
-        AppTheme.estilizarBotonPrimario(boton);
+        AppTheme.estilizarBotonInfo(boton);
         boton.addActionListener(e -> generar(tipo));
         tarjeta.add(boton, BorderLayout.SOUTH);
         return tarjeta;
