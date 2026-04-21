@@ -122,17 +122,6 @@ El sistema utiliza archivos de texto para cargar y guardar información del prog
 - `perfil_usuario.txt`
 - `estudiante.txt`
 
-## Cómo ejecutar el proyecto
-### Opción 1: desde NetBeans
-1. Abrir la carpeta `PROYECTO2` como proyecto en NetBeans.
-2. Compilar el proyecto.
-3. Ejecutar la clase principal:
-   `ipc1.gamezonepro.GameZoneProApp`
-
-### Opción 2: usando el archivo JAR
-1. Ir a la carpeta `PROYECTO2/dist/`
-2. Ejecutar el archivo:
-   `GameZonePro.jar`
 
 ## Reportes generados
 Los reportes HTML se almacenan en la carpeta `INFORMES` del repositorio. El sistema genera archivos con marca de tiempo y los intenta abrir automáticamente en el navegador.
@@ -140,16 +129,6 @@ Los reportes HTML se almacenan en la carpeta `INFORMES` del repositorio. El sist
 ## Funcionalidad general de la interfaz
 La aplicación usa una ventana principal con navegación entre módulos, lo cual coincide con el requerimiento del proyecto de tener una GUI que permita acceso a tienda, álbum, torneos, recompensas, reportes, datos del estudiante y salida del sistema. fileciteturn0file0
 
-## Contenido entregable del proyecto
-Este proyecto fue preparado para cumplir con los entregables solicitados:
-- Proyecto Java completo
-- Código fuente comentado
-- README.md
-- Manual técnico en PDF
-- Manual de usuario en PDF
-- Archivo `.jar`
-- Diagrama de clases
-- Informe de desarrollo
 
 ## Autor
 **ALVARO MOISÉS GIRÓN MORALES**  
