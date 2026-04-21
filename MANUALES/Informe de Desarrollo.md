@@ -51,8 +51,8 @@ Además de cumplir la parte funcional, el proyecto también buscó reforzar conc
 6. **Datos del Estudiante**  
    Muestra la información académica asociada al proyecto.
 
-**Espacio para captura:**  
-`[Insertar aquí captura del menú principal del sistema]`
+<img width="1919" height="959" alt="image" src="https://github.com/user-attachments/assets/47d8596c-b278-47e1-b325-b6601ff3f6f5" />
+
 
 ---
 
@@ -199,15 +199,6 @@ Esta estructura permitió recorrer el álbum sin usar arreglos tradicionales com
 - Intercambiar cartas entre dos celdas.
 - Buscar una carta por su código dentro del álbum.
 
-### Resultado del módulo
-El álbum puede mostrarse visualmente en Swing, permitiendo interacción directa con el usuario y manteniendo la información entre sesiones.
-
-**Espacios para capturas:**  
-`[Insertar aquí captura general del álbum]`  
-`[Insertar aquí captura agregando una carta]`  
-`[Insertar aquí captura del formulario de carta manual]`  
-`[Insertar aquí captura del detalle de carta seleccionada]`  
-`[Insertar aquí captura del intercambio de cartas]`
 
 ---
 
@@ -272,11 +263,8 @@ Para cumplir con la restricción del proyecto, el ordenamiento del ranking se re
 ### Resultado del módulo
 El sistema ofrece retroalimentación inmediata al usuario sobre su progreso y mejora la integración entre módulos, ya que las acciones realizadas en tienda, álbum y torneos afectan directamente la experiencia acumulada.
 
-**Espacios para capturas:**  
-`[Insertar aquí captura del panel de recompensas]`  
-`[Insertar aquí captura de barra de nivel y rango]`  
-`[Insertar aquí captura de logros desbloqueados]`  
-`[Insertar aquí captura del leaderboard]`
+<img width="1916" height="979" alt="image" src="https://github.com/user-attachments/assets/7e13aee7-0f3b-4047-a703-a003737900eb" />
+
 
 ---
 
@@ -395,20 +383,22 @@ Como trabajo futuro, el sistema podría ampliarse con:
 
 ---
 
-## 12. Anexos sugeridos
-En esta sección se recomienda agregar capturas finales del programa funcionando para fortalecer la evidencia de implementación.
+## 12. Anexos
+<img width="1919" height="959" alt="image" src="https://github.com/user-attachments/assets/5d25883e-ecc9-4c6a-b30a-8e410ffd826c" />
 
-### Capturas sugeridas
-- Menú principal.
-- Catálogo de tienda.
-- Carrito con compra.
-- Historial de compras.
-- Álbum de cartas.
-- Panel de detalles de carta.
-- Torneos con cola activa.
-- Taquillas procesando tickets.
-- Recompensas y leaderboard.
-- Reporte HTML abierto en navegador.
+<img width="1919" height="984" alt="image" src="https://github.com/user-attachments/assets/95dfa6dc-c730-47c7-a5db-42493c39d460" />
 
-**Espacio final para evidencias:**  
-`[Insertar aquí las capturas finales del sistema funcionando]`
+<img width="1918" height="971" alt="image" src="https://github.com/user-attachments/assets/ee471141-44df-4d8d-b411-ce918592027d" />
+
+<img width="1914" height="975" alt="image" src="https://github.com/user-attachments/assets/632ca7c8-7203-479c-b6ec-baa465486b69" />
+
+<img width="1917" height="985" alt="image" src="https://github.com/user-attachments/assets/2bafcfe6-09cc-4bb8-9824-a45358ebb90c" />
+
+<img width="1918" height="966" alt="image" src="https://github.com/user-attachments/assets/e6035d16-e948-4e68-a37f-d76795af9bce" />
+
+
+
+
+
+
+
